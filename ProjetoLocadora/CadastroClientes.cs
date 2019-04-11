@@ -22,7 +22,7 @@ namespace ProjetoLocadora
 
         private void CadastroDeClientes_Load(object sender, EventArgs e)
         {
-
+            label5.Text = DateTime.Now.ToLongDateString();
         }
 
         private void btnCadastrar_Click(object sender, EventArgs e)
@@ -195,5 +195,13 @@ namespace ProjetoLocadora
         {
             listaGrid();
         }
+
+        private void btnSair_Click(object sender, EventArgs e)
+        {
+            Close();
+            TelaInicial telaInicial = new TelaInicial();
+            telaInicial.Show();            
+        }
+        
     }
 }

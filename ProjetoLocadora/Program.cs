@@ -16,7 +16,7 @@ namespace ProjetoLocadora
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new CadastroDeClientes());
+            Application.Run(new TelaInicial());
         }
     }
 }

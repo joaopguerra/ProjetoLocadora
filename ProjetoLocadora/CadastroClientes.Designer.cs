@@ -47,6 +47,8 @@
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnListar = new System.Windows.Forms.Button();
             this.TabelaDados = new System.Windows.Forms.DataGridView();
+            this.btnSair = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TabelaDados)).BeginInit();
             this.SuspendLayout();
@@ -55,7 +57,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(13, 13);
+            this.label1.Location = new System.Drawing.Point(13, 19);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(98, 29);
             this.label1.TabIndex = 0;
@@ -136,7 +138,7 @@
             // btnCadastrar
             // 
             this.btnCadastrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCadastrar.Location = new System.Drawing.Point(16, 203);
+            this.btnCadastrar.Location = new System.Drawing.Point(21, 177);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(92, 29);
             this.btnCadastrar.TabIndex = 5;
@@ -147,7 +149,7 @@
             // btnEditar
             // 
             this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditar.Location = new System.Drawing.Point(116, 203);
+            this.btnEditar.Location = new System.Drawing.Point(121, 177);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(92, 29);
             this.btnEditar.TabIndex = 6;
@@ -158,7 +160,7 @@
             // btnDeletar
             // 
             this.btnDeletar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeletar.Location = new System.Drawing.Point(219, 203);
+            this.btnDeletar.Location = new System.Drawing.Point(22, 212);
             this.btnDeletar.Name = "btnDeletar";
             this.btnDeletar.Size = new System.Drawing.Size(92, 29);
             this.btnDeletar.TabIndex = 7;
@@ -168,7 +170,7 @@
             // 
             // txtID
             // 
-            this.txtID.Location = new System.Drawing.Point(362, 21);
+            this.txtID.Location = new System.Drawing.Point(362, 27);
             this.txtID.Name = "txtID";
             this.txtID.Size = new System.Drawing.Size(87, 20);
             this.txtID.TabIndex = 20;
@@ -177,7 +179,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(324, 18);
+            this.label7.Location = new System.Drawing.Point(324, 24);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(33, 23);
             this.label7.TabIndex = 19;
@@ -193,7 +195,7 @@
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(458, 19);
+            this.btnBuscar.Location = new System.Drawing.Point(458, 25);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(75, 23);
             this.btnBuscar.TabIndex = 21;
@@ -204,7 +206,7 @@
             // btnListar
             // 
             this.btnListar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnListar.Location = new System.Drawing.Point(322, 203);
+            this.btnListar.Location = new System.Drawing.Point(122, 212);
             this.btnListar.Name = "btnListar";
             this.btnListar.Size = new System.Drawing.Size(92, 29);
             this.btnListar.TabIndex = 22;
@@ -221,6 +223,26 @@
             this.TabelaDados.Size = new System.Drawing.Size(516, 226);
             this.TabelaDados.TabIndex = 23;
             // 
+            // btnSair
+            // 
+            this.btnSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSair.Location = new System.Drawing.Point(362, 215);
+            this.btnSair.Name = "btnSair";
+            this.btnSair.Size = new System.Drawing.Size(59, 29);
+            this.btnSair.TabIndex = 24;
+            this.btnSair.Text = "SAIR";
+            this.btnSair.UseVisualStyleBackColor = true;
+            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(325, 6);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(35, 13);
+            this.label5.TabIndex = 25;
+            this.label5.Text = "label5";
+            // 
             // CadastroDeClientes
             // 
             this.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
@@ -228,6 +250,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(541, 493);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.btnSair);
             this.Controls.Add(this.TabelaDados);
             this.Controls.Add(this.btnListar);
             this.Controls.Add(this.btnBuscar);
@@ -278,6 +302,8 @@
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button btnListar;
         private System.Windows.Forms.DataGridView TabelaDados;
+        private System.Windows.Forms.Button btnSair;
+        private System.Windows.Forms.Label label5;
     }
 }
 
