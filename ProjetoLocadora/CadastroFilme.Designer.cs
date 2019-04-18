@@ -46,12 +46,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtDescricao = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtLancamento = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtNotaFilme = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtCategoria = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.txtLancamento = new System.Windows.Forms.MaskedTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.TabelaDados)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -62,7 +62,7 @@
             this.btnSair.Location = new System.Drawing.Point(357, 286);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(59, 29);
-            this.btnSair.TabIndex = 43;
+            this.btnSair.TabIndex = 13;
             this.btnSair.Text = "SAIR";
             this.btnSair.UseVisualStyleBackColor = true;
             this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
@@ -82,7 +82,7 @@
             this.btnListar.Location = new System.Drawing.Point(117, 283);
             this.btnListar.Name = "btnListar";
             this.btnListar.Size = new System.Drawing.Size(92, 29);
-            this.btnListar.TabIndex = 41;
+            this.btnListar.TabIndex = 12;
             this.btnListar.Text = "LISTAR";
             this.btnListar.UseVisualStyleBackColor = true;
             // 
@@ -91,7 +91,7 @@
             this.btnBuscar.Location = new System.Drawing.Point(453, 12);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(75, 23);
-            this.btnBuscar.TabIndex = 40;
+            this.btnBuscar.TabIndex = 2;
             this.btnBuscar.Text = "BUSCAR";
             this.btnBuscar.UseVisualStyleBackColor = true;
             // 
@@ -100,7 +100,7 @@
             this.txtIDFilme.Location = new System.Drawing.Point(357, 14);
             this.txtIDFilme.Name = "txtIDFilme";
             this.txtIDFilme.Size = new System.Drawing.Size(87, 20);
-            this.txtIDFilme.TabIndex = 39;
+            this.txtIDFilme.TabIndex = 1;
             // 
             // label7
             // 
@@ -118,7 +118,7 @@
             this.btnDeletar.Location = new System.Drawing.Point(17, 283);
             this.btnDeletar.Name = "btnDeletar";
             this.btnDeletar.Size = new System.Drawing.Size(92, 29);
-            this.btnDeletar.TabIndex = 35;
+            this.btnDeletar.TabIndex = 11;
             this.btnDeletar.Text = "DELETAR";
             this.btnDeletar.UseVisualStyleBackColor = true;
             // 
@@ -128,7 +128,7 @@
             this.btnEditar.Location = new System.Drawing.Point(116, 248);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(92, 29);
-            this.btnEditar.TabIndex = 34;
+            this.btnEditar.TabIndex = 10;
             this.btnEditar.Text = "EDITAR";
             this.btnEditar.UseVisualStyleBackColor = true;
             // 
@@ -138,9 +138,10 @@
             this.btnCadastrar.Location = new System.Drawing.Point(16, 248);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(92, 29);
-            this.btnCadastrar.TabIndex = 33;
+            this.btnCadastrar.TabIndex = 9;
             this.btnCadastrar.Text = "CADASTRAR";
             this.btnCadastrar.UseVisualStyleBackColor = true;
+            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
             // 
             // pictureBox1
             // 
@@ -157,7 +158,7 @@
             this.txtProdutora.Location = new System.Drawing.Point(104, 87);
             this.txtProdutora.Name = "txtProdutora";
             this.txtProdutora.Size = new System.Drawing.Size(387, 20);
-            this.txtProdutora.TabIndex = 27;
+            this.txtProdutora.TabIndex = 4;
             // 
             // label3
             // 
@@ -174,7 +175,7 @@
             this.txtTituloFilme.Location = new System.Drawing.Point(104, 54);
             this.txtTituloFilme.Name = "txtTituloFilme";
             this.txtTituloFilme.Size = new System.Drawing.Size(387, 20);
-            this.txtTituloFilme.TabIndex = 26;
+            this.txtTituloFilme.TabIndex = 3;
             // 
             // label2
             // 
@@ -203,7 +204,7 @@
             this.txtDescricao.Name = "txtDescricao";
             this.txtDescricao.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtDescricao.Size = new System.Drawing.Size(140, 87);
-            this.txtDescricao.TabIndex = 44;
+            this.txtDescricao.TabIndex = 5;
             // 
             // label4
             // 
@@ -214,14 +215,6 @@
             this.label4.Size = new System.Drawing.Size(90, 23);
             this.label4.TabIndex = 45;
             this.label4.Text = "Descrição:";
-            // 
-            // txtLancamento
-            // 
-            this.txtLancamento.Location = new System.Drawing.Point(367, 156);
-            this.txtLancamento.Name = "txtLancamento";
-            this.txtLancamento.Size = new System.Drawing.Size(124, 20);
-            this.txtLancamento.TabIndex = 46;
-            this.txtLancamento.TextChanged += new System.EventHandler(this.txtLancamento_TextChanged);
             // 
             // label5
             // 
@@ -238,7 +231,7 @@
             this.txtNotaFilme.Location = new System.Drawing.Point(367, 187);
             this.txtNotaFilme.Name = "txtNotaFilme";
             this.txtNotaFilme.Size = new System.Drawing.Size(124, 20);
-            this.txtNotaFilme.TabIndex = 48;
+            this.txtNotaFilme.TabIndex = 8;
             // 
             // label6
             // 
@@ -255,7 +248,7 @@
             this.txtCategoria.Location = new System.Drawing.Point(367, 122);
             this.txtCategoria.Name = "txtCategoria";
             this.txtCategoria.Size = new System.Drawing.Size(124, 20);
-            this.txtCategoria.TabIndex = 50;
+            this.txtCategoria.TabIndex = 6;
             // 
             // label8
             // 
@@ -267,16 +260,25 @@
             this.label8.TabIndex = 51;
             this.label8.Text = "Categoria:";
             // 
+            // txtLancamento
+            // 
+            this.txtLancamento.Location = new System.Drawing.Point(367, 155);
+            this.txtLancamento.Mask = "00/00/0000";
+            this.txtLancamento.Name = "txtLancamento";
+            this.txtLancamento.Size = new System.Drawing.Size(124, 20);
+            this.txtLancamento.TabIndex = 7;
+            this.txtLancamento.ValidatingType = typeof(System.DateTime);
+            // 
             // CadastroFilme
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(538, 497);
+            this.Controls.Add(this.txtLancamento);
             this.Controls.Add(this.txtCategoria);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.txtNotaFilme);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.txtLancamento);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtDescricao);
             this.Controls.Add(this.label4);
@@ -324,11 +326,11 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtDescricao;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtLancamento;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtNotaFilme;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtCategoria;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.MaskedTextBox txtLancamento;
     }
 }

@@ -97,6 +97,7 @@
             this.Controls.Add(this.btnCadastrarCliente);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "TelaInicial";
             this.Text = "Projeto Locadora";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
