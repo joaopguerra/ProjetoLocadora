@@ -49,6 +49,7 @@
             this.TabelaDados = new System.Windows.Forms.DataGridView();
             this.btnSair = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
+            this.btnLimpar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TabelaDados)).BeginInit();
             this.SuspendLayout();
@@ -244,6 +245,17 @@
             this.label5.TabIndex = 25;
             this.label5.Text = "label5";
             // 
+            // btnLimpar
+            // 
+            this.btnLimpar.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpar.Location = new System.Drawing.Point(297, 215);
+            this.btnLimpar.Name = "btnLimpar";
+            this.btnLimpar.Size = new System.Drawing.Size(59, 29);
+            this.btnLimpar.TabIndex = 26;
+            this.btnLimpar.Text = "LIMPAR";
+            this.btnLimpar.UseVisualStyleBackColor = true;
+            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
+            // 
             // CadastroDeClientes
             // 
             this.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
@@ -251,6 +263,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(541, 493);
+            this.Controls.Add(this.btnLimpar);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.btnSair);
             this.Controls.Add(this.TabelaDados);
@@ -305,6 +318,7 @@
         private System.Windows.Forms.DataGridView TabelaDados;
         private System.Windows.Forms.Button btnSair;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btnLimpar;
     }
 }
 

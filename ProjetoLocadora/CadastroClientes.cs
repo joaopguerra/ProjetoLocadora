@@ -211,5 +211,15 @@ namespace ProjetoLocadora
             txtCPF.Text = TabelaDados.CurrentRow.Cells["CPF"].Value.ToString();
             txtTelefone.Text = TabelaDados.CurrentRow.Cells["Telefone"].Value.ToString();
         }
+
+        private void btnLimpar_Click(object sender, EventArgs e)
+        {
+            txtID.Text = "";
+            txtNome.Text = "";
+            txtTelefone.Text = "";
+            txtCPF.Text = "";
+            txtEmail.Text = "";
+            TabelaDados.DataSource = null;
+        }
     }
 }

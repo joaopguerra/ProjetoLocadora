@@ -49,7 +49,7 @@ namespace ProjetoLocadora
                 CM.Parameters.Add("@Titulo", MySqlDbType.VarChar, 45).Value = txtTituloFilme.Text;
                 CM.Parameters.Add("@Produtora", MySqlDbType.VarChar, 45).Value = txtProdutora.Text;
                 CM.Parameters.Add("@Descricao", MySqlDbType.VarChar, 45).Value = txtDescricao.Text;
-                CM.Parameters.Add("@NotaFilme", MySqlDbType.Int32).Value = txtNotaFilme.Text;
+                CM.Parameters.Add("@NotaFilme", MySqlDbType.Double).Value = txtNotaFilme.Text;
                 CM.Parameters.Add("@DataLancamento", MySqlDbType.VarChar, 10).Value = txtLancamento.Text;
                 CM.Parameters.Add("@Categoria", MySqlDbType.VarChar, 45).Value = txtCategoria.Text;
 
@@ -155,6 +155,80 @@ namespace ProjetoLocadora
             txtCategoria.Text = "";
             txtLancamento.Text = "";
             txtNotaFilme.Text = "";
+            TabelaFilmes.DataSource = null;
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                /*Conexão com o BD e inserindo na tb_clientes*/
+                MySqlConnection CON = new MySqlConnection("SERVER=localhost;PORT=3306;User ID=root;DATABASE=projetolocadora;PASSWORD=;");
+                CON.Open();
+                MySqlCommand CM = new MySqlCommand("UPDATE filme set Titulo = ?, Produtora = ?, Descricao = ?, NotaFilme = ?, " +
+                    "DataLancamento = ?, Categoria= ? WHERE Id_filme = ?", CON);
+
+                /*Parameter irá substituir os valores dentro do campo*/
+                CM.Parameters.Add("@Titulo", MySqlDbType.VarChar, 45).Value = txtTituloFilme.Text;
+                CM.Parameters.Add("@Produtora", MySqlDbType.VarChar, 45).Value = txtProdutora.Text;
+                CM.Parameters.Add("@Descricao", MySqlDbType.VarChar, 45).Value = txtDescricao.Text;
+                CM.Parameters.Add("@NotaFilme", MySqlDbType.Double).Value = txtNotaFilme.Text;
+                CM.Parameters.Add("@DataLancamento", MySqlDbType.VarChar, 10).Value = txtLancamento.Text;
+                CM.Parameters.Add("@Categoria", MySqlDbType.VarChar, 45).Value = txtCategoria.Text;
+                CM.Parameters.Add("Id_filme", MySqlDbType.Int32).Value = txtIDFilme.Text;
+
+
+                CM.ExecuteNonQuery();
+
+                MessageBox.Show("Cadastro editado com sucesso!");
+                CON.Close();
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Cadastro não realizado!" + ex);
+            }
+        }
+
+
+        private void listaGrid()
+        {
+            /*Conexão com o BD*/
+            MySqlConnection CON = new MySqlConnection("SERVER=localhost;PORT=3306;User ID=root;DATABASE=projetolocadora;PASSWORD=;");
+            CON.Open();
+            MySqlCommand CM = new MySqlCommand("SELECT * FROM filme", CON);
+            //Nome, Telefone, CPF, Email FROM usuario WHERE Id_Usuario = ?
+
+            try
+            {
+                MySqlDataAdapter objAdp = new MySqlDataAdapter(CM);
+                DataTable dtLista = new DataTable();
+                objAdp.Fill(dtLista);
+                TabelaFilmes.DataSource = dtLista;
+            }
+
+            catch
+            {
+                MessageBox.Show("ERRO");
+            }
+        }
+
+        private void btnListar_Click(object sender, EventArgs e)
+        {
+            listaGrid();
+        }
+
+        private void TabelaFilmes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtIDFilme.Text = TabelaFilmes.CurrentRow.Cells["Id_Filme"].Value.ToString();
+            txtTituloFilme.Text = TabelaFilmes.CurrentRow.Cells["Titulo"].Value.ToString();
+            txtProdutora.Text = TabelaFilmes.CurrentRow.Cells["Produtora"].Value.ToString();
+            txtDescricao.Text = TabelaFilmes.CurrentRow.Cells["Descricao"].Value.ToString();
+            txtNotaFilme.Text = TabelaFilmes.CurrentRow.Cells["NotaFilme"].Value.ToString();
+            txtLancamento.Text = TabelaFilmes.CurrentRow.Cells["DataLancamento"].Value.ToString();
+            txtCategoria.Text = TabelaFilmes.CurrentRow.Cells["Categoria"].Value.ToString();
+
+
         }
     }
 }
