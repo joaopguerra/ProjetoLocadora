@@ -202,6 +202,14 @@ namespace ProjetoLocadora
             TelaInicial telaInicial = new TelaInicial();
             telaInicial.Show();            
         }
-        
+
+        private void TabelaDados_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtID.Text = TabelaDados.CurrentRow.Cells["Id_Usuario"].Value.ToString();
+            txtNome.Text = TabelaDados.CurrentRow.Cells["Nome"].Value.ToString();
+            txtEmail.Text = TabelaDados.CurrentRow.Cells["Email"].Value.ToString();
+            txtCPF.Text = TabelaDados.CurrentRow.Cells["CPF"].Value.ToString();
+            txtTelefone.Text = TabelaDados.CurrentRow.Cells["Telefone"].Value.ToString();
+        }
     }
 }

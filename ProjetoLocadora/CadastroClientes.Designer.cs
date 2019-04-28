@@ -222,6 +222,7 @@
             this.TabelaDados.Name = "TabelaDados";
             this.TabelaDados.Size = new System.Drawing.Size(516, 226);
             this.TabelaDados.TabIndex = 23;
+            this.TabelaDados.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.TabelaDados_CellContentClick);
             // 
             // btnSair
             // 

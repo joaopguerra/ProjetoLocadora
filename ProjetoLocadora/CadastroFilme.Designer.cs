@@ -52,6 +52,7 @@
             this.txtCategoria = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtLancamento = new System.Windows.Forms.MaskedTextBox();
+            this.btnLimpar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.TabelaDados)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -94,6 +95,7 @@
             this.btnBuscar.TabIndex = 2;
             this.btnBuscar.Text = "BUSCAR";
             this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // txtIDFilme
             // 
@@ -121,6 +123,7 @@
             this.btnDeletar.TabIndex = 11;
             this.btnDeletar.Text = "DELETAR";
             this.btnDeletar.UseVisualStyleBackColor = true;
+            this.btnDeletar.Click += new System.EventHandler(this.btnDeletar_Click);
             // 
             // btnEditar
             // 
@@ -269,11 +272,23 @@
             this.txtLancamento.TabIndex = 7;
             this.txtLancamento.ValidatingType = typeof(System.DateTime);
             // 
+            // btnLimpar
+            // 
+            this.btnLimpar.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpar.Location = new System.Drawing.Point(292, 286);
+            this.btnLimpar.Name = "btnLimpar";
+            this.btnLimpar.Size = new System.Drawing.Size(59, 29);
+            this.btnLimpar.TabIndex = 52;
+            this.btnLimpar.Text = "LIMPAR";
+            this.btnLimpar.UseVisualStyleBackColor = true;
+            this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
+            // 
             // CadastroFilme
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(538, 497);
+            this.Controls.Add(this.btnLimpar);
             this.Controls.Add(this.txtLancamento);
             this.Controls.Add(this.txtCategoria);
             this.Controls.Add(this.label8);
@@ -332,5 +347,6 @@
         private System.Windows.Forms.TextBox txtCategoria;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.MaskedTextBox txtLancamento;
+        private System.Windows.Forms.Button btnLimpar;
     }
 }
