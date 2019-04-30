@@ -48,8 +48,9 @@
             this.btnListar = new System.Windows.Forms.Button();
             this.TabelaDados = new System.Windows.Forms.DataGridView();
             this.btnSair = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
             this.btnLimpar = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.dataCadastro = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TabelaDados)).BeginInit();
             this.SuspendLayout();
@@ -68,7 +69,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(17, 58);
+            this.label2.Location = new System.Drawing.Point(12, 58);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(61, 23);
             this.label2.TabIndex = 1;
@@ -92,7 +93,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(17, 96);
+            this.label3.Location = new System.Drawing.Point(12, 96);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(56, 23);
             this.label3.TabIndex = 3;
@@ -112,7 +113,7 @@
             // 
             this.txtEndereco.AutoSize = true;
             this.txtEndereco.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEndereco.Location = new System.Drawing.Point(17, 135);
+            this.txtEndereco.Location = new System.Drawing.Point(12, 135);
             this.txtEndereco.Name = "txtEndereco";
             this.txtEndereco.Size = new System.Drawing.Size(44, 23);
             this.txtEndereco.TabIndex = 5;
@@ -129,7 +130,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(427, 168);
+            this.pictureBox1.Location = new System.Drawing.Point(427, 194);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(106, 76);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -139,7 +140,7 @@
             // btnCadastrar
             // 
             this.btnCadastrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCadastrar.Location = new System.Drawing.Point(21, 177);
+            this.btnCadastrar.Location = new System.Drawing.Point(13, 203);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(92, 29);
             this.btnCadastrar.TabIndex = 5;
@@ -150,7 +151,7 @@
             // btnEditar
             // 
             this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditar.Location = new System.Drawing.Point(121, 177);
+            this.btnEditar.Location = new System.Drawing.Point(113, 203);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(92, 29);
             this.btnEditar.TabIndex = 6;
@@ -161,7 +162,7 @@
             // btnDeletar
             // 
             this.btnDeletar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeletar.Location = new System.Drawing.Point(22, 212);
+            this.btnDeletar.Location = new System.Drawing.Point(14, 238);
             this.btnDeletar.Name = "btnDeletar";
             this.btnDeletar.Size = new System.Drawing.Size(92, 29);
             this.btnDeletar.TabIndex = 7;
@@ -207,7 +208,7 @@
             // btnListar
             // 
             this.btnListar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnListar.Location = new System.Drawing.Point(122, 212);
+            this.btnListar.Location = new System.Drawing.Point(114, 238);
             this.btnListar.Name = "btnListar";
             this.btnListar.Size = new System.Drawing.Size(92, 29);
             this.btnListar.TabIndex = 22;
@@ -219,7 +220,7 @@
             // 
             this.TabelaDados.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.TabelaDados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.TabelaDados.Location = new System.Drawing.Point(13, 255);
+            this.TabelaDados.Location = new System.Drawing.Point(13, 281);
             this.TabelaDados.Name = "TabelaDados";
             this.TabelaDados.Size = new System.Drawing.Size(516, 226);
             this.TabelaDados.TabIndex = 23;
@@ -228,7 +229,7 @@
             // btnSair
             // 
             this.btnSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSair.Location = new System.Drawing.Point(362, 215);
+            this.btnSair.Location = new System.Drawing.Point(362, 241);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(59, 29);
             this.btnSair.TabIndex = 24;
@@ -236,19 +237,10 @@
             this.btnSair.UseVisualStyleBackColor = true;
             this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(325, 6);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(35, 13);
-            this.label5.TabIndex = 25;
-            this.label5.Text = "label5";
-            // 
             // btnLimpar
             // 
             this.btnLimpar.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpar.Location = new System.Drawing.Point(297, 215);
+            this.btnLimpar.Location = new System.Drawing.Point(297, 241);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(59, 29);
             this.btnLimpar.TabIndex = 26;
@@ -256,15 +248,35 @@
             this.btnLimpar.UseVisualStyleBackColor = true;
             this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(11, 168);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(100, 23);
+            this.label5.TabIndex = 27;
+            this.label5.Text = "CADASTRO:";
+            // 
+            // dataCadastro
+            // 
+            this.dataCadastro.CustomFormat = "yyyy-MM-dd";
+            this.dataCadastro.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dataCadastro.Location = new System.Drawing.Point(109, 169);
+            this.dataCadastro.Name = "dataCadastro";
+            this.dataCadastro.Size = new System.Drawing.Size(94, 20);
+            this.dataCadastro.TabIndex = 28;
+            // 
             // CadastroDeClientes
             // 
             this.AccessibleRole = System.Windows.Forms.AccessibleRole.None;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(541, 493);
-            this.Controls.Add(this.btnLimpar);
+            this.ClientSize = new System.Drawing.Size(541, 517);
+            this.Controls.Add(this.dataCadastro);
             this.Controls.Add(this.label5);
+            this.Controls.Add(this.btnLimpar);
             this.Controls.Add(this.btnSair);
             this.Controls.Add(this.TabelaDados);
             this.Controls.Add(this.btnListar);
@@ -317,8 +329,9 @@
         private System.Windows.Forms.Button btnListar;
         private System.Windows.Forms.DataGridView TabelaDados;
         private System.Windows.Forms.Button btnSair;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnLimpar;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.DateTimePicker dataCadastro;
     }
 }
 

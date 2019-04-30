@@ -22,7 +22,7 @@ namespace ProjetoLocadora
 
         private void CadastroDeClientes_Load(object sender, EventArgs e)
         {
-            label5.Text = DateTime.Now.ToLongDateString();
+            
         }
 
         private void btnCadastrar_Click(object sender, EventArgs e)
@@ -34,19 +34,20 @@ namespace ProjetoLocadora
                 clientes.nome = txtNome.Text;
                 clientes.telefone = txtTelefone.Text;
                 clientes.cpf = txtCPF.Text;
-                clientes.email = txtEmail.Text;
+                clientes.email = txtEmail.Text;                
 
                 /*Conexão com o BD e inserindo na tb_clientes*/
-                MySqlConnection CON = new MySqlConnection("SERVER=localhost;PORT=3306;User ID=root;DATABASE=projetolocadora;PASSWORD=;");
+                MySqlConnection CON = new MySqlConnection("SERVER=localhost;PORT=3306;User ID=root;DATABASE=gestaolocadora;PASSWORD=1234567");
                 CON.Open();
-                MySqlCommand CM = new MySqlCommand("INSERT INTO usuario(Id_Usuario, Nome, Telefone, CPF, email)"
-                    + "VALUES (null, ?, ?, ?, ?)", CON);
+                MySqlCommand CM = new MySqlCommand("INSERT INTO usuario(Id_Usuario, Nome, Telefone, CPF, email, dataCadastro)"
+                    + "VALUES (null, ?, ?, ?, ?, ?)", CON);
 
                 /*Parameter irá substituir os valores dentro do campo*/
                 CM.Parameters.Add("@Nome", MySqlDbType.VarChar, 45).Value = clientes.nome;
                 CM.Parameters.Add("@Telefone", MySqlDbType.VarChar, 45).Value = clientes.telefone;
                 CM.Parameters.Add("@CPF", MySqlDbType.VarChar, 45).Value = clientes.cpf;
-                CM.Parameters.Add("@Email", MySqlDbType.VarChar, 100).Value = clientes.email;
+                CM.Parameters.Add("@Email", MySqlDbType.VarChar, 100).Value = clientes.email;                
+                CM.Parameters.Add("@dataCadastro", MySqlDbType.Date).Value = dataCadastro.Text;
 
 
                 CM.ExecuteNonQuery();
@@ -78,7 +79,7 @@ namespace ProjetoLocadora
                 try
                 {
                     /*Conexão com o BD e inserindo na tb_clientes*/
-                    MySqlConnection CON = new MySqlConnection("SERVER=localhost;PORT=3306;User ID=root;DATABASE=projetolocadora;PASSWORD=;");
+                    MySqlConnection CON = new MySqlConnection("SERVER=localhost;PORT=3306;User ID=root;DATABASE=gestaolocadora;PASSWORD=1234567");
                     CON.Open();
                     MySqlCommand CM = new MySqlCommand("DELETE FROM usuario where Id_Usuario = ?", CON);
 
@@ -116,15 +117,16 @@ namespace ProjetoLocadora
                 clientes.email = txtEmail.Text;
 
                 /*Conexão com o BD e inserindo na tb_clientes*/
-                MySqlConnection CON = new MySqlConnection("SERVER=localhost;PORT=3306;User ID=root;DATABASE=projetolocadora;PASSWORD=;");
+                MySqlConnection CON = new MySqlConnection("SERVER=localhost;PORT=3306;User ID=root;DATABASE=gestaolocadora;PASSWORD=1234567");
                 CON.Open();
-                MySqlCommand CM = new MySqlCommand("UPDATE usuario set Nome = ?, Telefone = ?, CPF = ?, email = ? WHERE Id_usuario = ?", CON);
+                MySqlCommand CM = new MySqlCommand("UPDATE usuario set Nome = ?, Telefone = ?, CPF = ?, email = ? WHERE Id_usuario = ?, dataCadastro = ?", CON);
 
                 /*Parameter irá substituir os valores dentro do campo*/
                 CM.Parameters.Add("@Nome", MySqlDbType.VarChar, 45).Value = clientes.nome;
                 CM.Parameters.Add("@Telefone", MySqlDbType.VarChar, 45).Value = clientes.telefone;
                 CM.Parameters.Add("@CPF", MySqlDbType.VarChar, 45).Value = clientes.cpf;
                 CM.Parameters.Add("@Email", MySqlDbType.VarChar, 100).Value = clientes.email;
+                CM.Parameters.Add("@dataCadastro", MySqlDbType.Date).Value = dataCadastro.Text;
                 CM.Parameters.Add("Id_usuario", MySqlDbType.Int32).Value = txtID.Text;
 
 
@@ -145,9 +147,9 @@ namespace ProjetoLocadora
             try
             {
                 /*Conexão com o BD e buscando na tabela usuario*/
-                MySqlConnection CON = new MySqlConnection("SERVER=localhost;PORT=3306;User ID=root;DATABASE=projetolocadora;PASSWORD=;");
+                MySqlConnection CON = new MySqlConnection("SERVER=localhost;PORT=3306;User ID=root;DATABASE=gestaolocadora;PASSWORD=1234567");
                 CON.Open();
-                MySqlCommand CM = new MySqlCommand("SELECT Nome, Telefone, CPF, Email FROM usuario WHERE Id_Usuario = ?", CON);
+                MySqlCommand CM = new MySqlCommand("SELECT Nome, Telefone, CPF, Email, dataCadastro FROM usuario WHERE Id_Usuario = ?", CON);
                 CM.Parameters.Add("Id_Usuario", MySqlDbType.Int32).Value = txtID.Text;
 
                 //executa o comando
@@ -161,6 +163,7 @@ namespace ProjetoLocadora
                 txtTelefone.Text = DR.GetString(1);
                 txtCPF.Text = DR.GetString(2);
                 txtEmail.Text = DR.GetString(3);
+                dataCadastro.Text = DR.GetString(4);
             }
 
             catch (Exception ex)
@@ -171,11 +174,11 @@ namespace ProjetoLocadora
 
         private void listaGrid()
         {
-            /*Conexão com o BD*/ 
-            MySqlConnection CON = new MySqlConnection("SERVER=localhost;PORT=3306;User ID=root;DATABASE=projetolocadora;PASSWORD=;");
+            /*Conexão com o BD*/
+            MySqlConnection CON = new MySqlConnection("SERVER=localhost;PORT=3306;User ID=root;DATABASE=gestaolocadora;PASSWORD=1234567");
             CON.Open();
             MySqlCommand CM = new MySqlCommand("SELECT * FROM usuario", CON);
-            //Nome, Telefone, CPF, Email FROM usuario WHERE Id_Usuario = ?
+
 
             try
             {
@@ -210,6 +213,7 @@ namespace ProjetoLocadora
             txtEmail.Text = TabelaDados.CurrentRow.Cells["Email"].Value.ToString();
             txtCPF.Text = TabelaDados.CurrentRow.Cells["CPF"].Value.ToString();
             txtTelefone.Text = TabelaDados.CurrentRow.Cells["Telefone"].Value.ToString();
+            dataCadastro.Text = TabelaDados.CurrentRow.Cells["dataCadastro"].Value.ToString();
         }
 
         private void btnLimpar_Click(object sender, EventArgs e)

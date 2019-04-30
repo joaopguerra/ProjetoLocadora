@@ -53,6 +53,8 @@
             this.label8 = new System.Windows.Forms.Label();
             this.txtLancamento = new System.Windows.Forms.MaskedTextBox();
             this.btnLimpar = new System.Windows.Forms.Button();
+            this.txtValorFilme = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.TabelaFilmes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -60,7 +62,7 @@
             // btnSair
             // 
             this.btnSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSair.Location = new System.Drawing.Point(357, 264);
+            this.btnSair.Location = new System.Drawing.Point(357, 290);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(59, 29);
             this.btnSair.TabIndex = 13;
@@ -72,16 +74,16 @@
             // 
             this.TabelaFilmes.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.TabelaFilmes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.TabelaFilmes.Location = new System.Drawing.Point(8, 299);
+            this.TabelaFilmes.Location = new System.Drawing.Point(8, 328);
             this.TabelaFilmes.Name = "TabelaFilmes";
-            this.TabelaFilmes.Size = new System.Drawing.Size(520, 186);
+            this.TabelaFilmes.Size = new System.Drawing.Size(520, 157);
             this.TabelaFilmes.TabIndex = 42;
             this.TabelaFilmes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.TabelaFilmes_CellContentClick);
             // 
             // btnListar
             // 
             this.btnListar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnListar.Location = new System.Drawing.Point(117, 261);
+            this.btnListar.Location = new System.Drawing.Point(117, 287);
             this.btnListar.Name = "btnListar";
             this.btnListar.Size = new System.Drawing.Size(92, 29);
             this.btnListar.TabIndex = 12;
@@ -119,7 +121,7 @@
             // btnDeletar
             // 
             this.btnDeletar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeletar.Location = new System.Drawing.Point(17, 261);
+            this.btnDeletar.Location = new System.Drawing.Point(17, 287);
             this.btnDeletar.Name = "btnDeletar";
             this.btnDeletar.Size = new System.Drawing.Size(92, 29);
             this.btnDeletar.TabIndex = 11;
@@ -130,7 +132,7 @@
             // btnEditar
             // 
             this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditar.Location = new System.Drawing.Point(116, 226);
+            this.btnEditar.Location = new System.Drawing.Point(116, 252);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(92, 29);
             this.btnEditar.TabIndex = 10;
@@ -141,7 +143,7 @@
             // btnCadastrar
             // 
             this.btnCadastrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCadastrar.Location = new System.Drawing.Point(16, 226);
+            this.btnCadastrar.Location = new System.Drawing.Point(16, 252);
             this.btnCadastrar.Name = "btnCadastrar";
             this.btnCadastrar.Size = new System.Drawing.Size(92, 29);
             this.btnCadastrar.TabIndex = 9;
@@ -152,7 +154,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(422, 217);
+            this.pictureBox1.Location = new System.Drawing.Point(422, 243);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(106, 76);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -278,7 +280,7 @@
             // btnLimpar
             // 
             this.btnLimpar.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLimpar.Location = new System.Drawing.Point(292, 264);
+            this.btnLimpar.Location = new System.Drawing.Point(292, 290);
             this.btnLimpar.Name = "btnLimpar";
             this.btnLimpar.Size = new System.Drawing.Size(59, 29);
             this.btnLimpar.TabIndex = 52;
@@ -286,11 +288,31 @@
             this.btnLimpar.UseVisualStyleBackColor = true;
             this.btnLimpar.Click += new System.EventHandler(this.btnLimpar_Click);
             // 
+            // txtValorFilme
+            // 
+            this.txtValorFilme.Location = new System.Drawing.Point(367, 215);
+            this.txtValorFilme.Name = "txtValorFilme";
+            this.txtValorFilme.Size = new System.Drawing.Size(124, 20);
+            this.txtValorFilme.TabIndex = 53;
+            this.txtValorFilme.Text = "R$ ";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(314, 212);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(55, 23);
+            this.label9.TabIndex = 54;
+            this.label9.Text = "Valor:";
+            // 
             // CadastroFilme
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(538, 497);
+            this.Controls.Add(this.txtValorFilme);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.btnLimpar);
             this.Controls.Add(this.txtLancamento);
             this.Controls.Add(this.txtCategoria);
@@ -352,5 +374,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.MaskedTextBox txtLancamento;
         private System.Windows.Forms.Button btnLimpar;
+        private System.Windows.Forms.TextBox txtValorFilme;
+        private System.Windows.Forms.Label label9;
     }
 }

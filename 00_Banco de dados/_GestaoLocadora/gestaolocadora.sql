@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 29-Mar-2019 às 10:33
--- Versão do servidor: 10.1.36-MariaDB
--- versão do PHP: 7.2.11
+-- Generation Time: 30-Abr-2019 às 19:13
+-- Versão do servidor: 10.1.35-MariaDB
+-- versão do PHP: 7.2.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `gestaolocadora`
+-- Database: `projetolocadora`
 --
 
 -- --------------------------------------------------------
@@ -65,9 +65,30 @@ CREATE TABLE `filme` (
   `Titulo` varchar(45) NOT NULL,
   `Produtora` varchar(45) DEFAULT NULL,
   `Descricao` varchar(45) DEFAULT NULL,
-  `NotaFilme` int(11) DEFAULT NULL,
-  `DataLançamento` datetime DEFAULT NULL,
-  `Categoria` varchar(45) DEFAULT NULL
+  `NotaFilme` float DEFAULT NULL,
+  `DataLancamento` varchar(10) DEFAULT NULL,
+  `Categoria` varchar(45) DEFAULT NULL,
+  `ValorFilme` float NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Extraindo dados da tabela `filme`
+--
+
+INSERT INTO `filme` (`Id_Filme`, `Titulo`, `Produtora`, `Descricao`, `NotaFilme`, `DataLancamento`, `Categoria`, `ValorFilme`) VALUES
+(4, 'Teste 1', 'Testando 1', 'Filme teste 1', 8.5, '17/04/2019', 'Comédia', 5.5),
+(5, 'Testando 2', 'TestProdu', 'Testando 6', 10, '27/04/2019', 'Comédia', 8),
+(6, 'Teste 5', 'TestProd', 'Testando mais m', 5, '30/01/2015', 'Suspense', 5.5);
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `locadora`
+--
+
+CREATE TABLE `locadora` (
+  `Id_Locadora` int(11) NOT NULL,
+  `Nome` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -93,8 +114,20 @@ CREATE TABLE `usuario` (
   `Nome` varchar(45) NOT NULL,
   `Telefone` varchar(45) NOT NULL,
   `CPF` varchar(45) NOT NULL,
-  `Email` varchar(45) DEFAULT NULL
+  `Email` varchar(45) DEFAULT NULL,
+  `dataCadastro` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Extraindo dados da tabela `usuario`
+--
+
+INSERT INTO `usuario` (`Id_Usuario`, `Nome`, `Telefone`, `CPF`, `Email`, `dataCadastro`) VALUES
+(1, 'João Guerra', '(99)99999-9999', '000,000,000-00', 'joao@joao.com', '0000-00-00 00:00:00'),
+(2, 'Lays Rocha', '(88)88888-8888', '111,111,111-11', 'lays@lays.com', '0000-00-00 00:00:00'),
+(5, 'Lia Guerra', '(44)44444-4444', '000,000,000-00', 'lia@lia.com', '0000-00-00 00:00:00'),
+(6, 'Lucas Guerra', '(99)99999-9999', '555,555,555-55', 'lucas@lucas.com', '0000-00-00 00:00:00'),
+(7, 'Celia Machado', '(77)77777-7777', '222,222,222-22', 'celia@celia.com', '0000-00-00 00:00:00');
 
 --
 -- Indexes for dumped tables
@@ -123,6 +156,13 @@ ALTER TABLE `endereco`
 --
 ALTER TABLE `filme`
   ADD PRIMARY KEY (`Id_Filme`);
+
+--
+-- Indexes for table `locadora`
+--
+ALTER TABLE `locadora`
+  ADD PRIMARY KEY (`Id_Locadora`),
+  ADD UNIQUE KEY `Id_Locadora_UNIQUE` (`Id_Locadora`);
 
 --
 -- Indexes for table `locadorafilme`
@@ -160,7 +200,13 @@ ALTER TABLE `endereco`
 -- AUTO_INCREMENT for table `filme`
 --
 ALTER TABLE `filme`
-  MODIFY `Id_Filme` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `Id_Filme` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- AUTO_INCREMENT for table `locadora`
+--
+ALTER TABLE `locadora`
+  MODIFY `Id_Locadora` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `locadorafilme`
@@ -172,7 +218,7 @@ ALTER TABLE `locadorafilme`
 -- AUTO_INCREMENT for table `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `Id_Usuario` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `Id_Usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- Constraints for dumped tables
@@ -190,7 +236,7 @@ ALTER TABLE `aluguel`
 -- Limitadores para a tabela `endereco`
 --
 ALTER TABLE `endereco`
-  ADD CONSTRAINT `fk_Endereco_Locadora1` FOREIGN KEY (`Locadora_Id_Locadora`) REFERENCES `mydb`.`locadora` (`Id_Locadora`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `fk_Endereco_Locadora1` FOREIGN KEY (`Locadora_Id_Locadora`) REFERENCES `locadora` (`Id_Locadora`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_Endereco_Usuario1` FOREIGN KEY (`Usuario_Id_Usuario`) REFERENCES `usuario` (`Id_Usuario`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --

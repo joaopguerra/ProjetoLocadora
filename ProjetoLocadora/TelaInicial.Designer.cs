@@ -34,6 +34,7 @@
             this.btnCadastrarCliente = new System.Windows.Forms.Button();
             this.btnCadastrarFilme = new System.Windows.Forms.Button();
             this.btnFechar = new System.Windows.Forms.Button();
+            this.btnAluguel = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,7 +60,7 @@
             // 
             // btnCadastrarCliente
             // 
-            this.btnCadastrarCliente.Location = new System.Drawing.Point(12, 58);
+            this.btnCadastrarCliente.Location = new System.Drawing.Point(71, 58);
             this.btnCadastrarCliente.Name = "btnCadastrarCliente";
             this.btnCadastrarCliente.Size = new System.Drawing.Size(136, 23);
             this.btnCadastrarCliente.TabIndex = 2;
@@ -69,7 +70,7 @@
             // 
             // btnCadastrarFilme
             // 
-            this.btnCadastrarFilme.Location = new System.Drawing.Point(12, 87);
+            this.btnCadastrarFilme.Location = new System.Drawing.Point(71, 87);
             this.btnCadastrarFilme.Name = "btnCadastrarFilme";
             this.btnCadastrarFilme.Size = new System.Drawing.Size(136, 23);
             this.btnCadastrarFilme.TabIndex = 3;
@@ -87,11 +88,22 @@
             this.btnFechar.UseVisualStyleBackColor = true;
             this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
             // 
+            // btnAluguel
+            // 
+            this.btnAluguel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAluguel.Location = new System.Drawing.Point(248, 58);
+            this.btnAluguel.Name = "btnAluguel";
+            this.btnAluguel.Size = new System.Drawing.Size(150, 52);
+            this.btnAluguel.TabIndex = 5;
+            this.btnAluguel.Text = "ALUGUEL";
+            this.btnAluguel.UseVisualStyleBackColor = true;
+            // 
             // TelaInicial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(464, 254);
+            this.Controls.Add(this.btnAluguel);
             this.Controls.Add(this.btnFechar);
             this.Controls.Add(this.btnCadastrarFilme);
             this.Controls.Add(this.btnCadastrarCliente);
@@ -113,5 +125,6 @@
         private System.Windows.Forms.Button btnCadastrarCliente;
         private System.Windows.Forms.Button btnCadastrarFilme;
         private System.Windows.Forms.Button btnFechar;
+        private System.Windows.Forms.Button btnAluguel;
     }
 }

@@ -12,7 +12,7 @@ namespace ProjetoLocadora
         public string nome { get; set; }
         public string email { get; set; }
         public string cpf { get; set; }    
-        public DateTime cadastro { get; set; }
+        public DateTime dataCadastro { get; set; }
         public string telefone { get; set; }
     }
 }
